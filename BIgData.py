@@ -12,3 +12,21 @@ def ejercicio1():
     print("El total de hogares en la 9na region de tipo compuesto es: ",total)
 
 ejercicio1()
+
+
+============================================================
+
+Diccionario
+
+total=0
+comunas={} #Diccionario vacio
+for linea in archivo:
+    linea = linea.rstrip()
+    linea = linea.split(";")
+    if linea[0] == "9": # Define el filtro de la region por numero, el que esta entre comillas define el buscador de comunas
+        if linea[9] == "4":
+            comunas[linea[2]]=comunas.get(linea[2],0)+1
+#print(comunas)
+# despliegue de los valores resultantes de la busqueda por comuna
+for c,v in comunas.items():
+    print("Comuna: ",c, "Total: ",v)
